@@ -5,22 +5,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { LandingHeaderComponent } from './pages/layout/landing-header/landing-header.component';
-import { LayoutModule } from 'src/app/pages/admin/layout/layout.module';
+import { LayoutModule } from 'src/app/pages/layout/layout.module';
 // import { ClickOutsideDirective } from './core/directives/click-outside.directive';
 import { BasicAuthInterceptor } from 'src/app/interceptor/basic-auth';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // ClickOutsideDirective,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    LayoutModule,
-    // LandingHeaderComponent
+    LayoutModule
   ],
   exports: [
     LayoutModule

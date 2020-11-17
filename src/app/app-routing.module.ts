@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './guard/auth.guard';
-import { ProtectGuard } from './guard/protect.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/admin/user/login',
+    redirectTo: '/auth/login',
     pathMatch: 'full'
   },
   {
-    path:'auth',
+    path: 'auth',
     loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
   {
-    path:'admin',
+    path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
   },
-  { path: '**', redirectTo: '/admin/user/login', pathMatch: 'full' }
+  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
 
 @NgModule({

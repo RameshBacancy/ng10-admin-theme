@@ -13,75 +13,47 @@ import { SpinnerService } from 'src/app/services/spinner.service';
 export class LoginComponent implements OnInit {
 
 
-  public user = {email:"",password:""};
-  public fuser = {email:""};
+  public user = {email: 'eve.holt@reqres.in', password: 'eve.holt@reqres.in'};
+  public fuser = {email: 'eve.holt@reqres.in'};
   message: any;
   closeResult: string;
   errmessage: string;
   validForm: boolean;
 
   constructor(
-    private _userService: UserService,
+    private userService: UserService,
     private router: Router,
     private modalService: NgbModal,
-    private _alertService: AlertService,
+    private alertService: AlertService,
     private spinner: SpinnerService
   ) { }
 
   ngOnInit() {
-    // this.spinner.openSpinner();
-    localStorage.clear();
     this.spinner.closeSpinner();
   }
 
-  login()
-  {
-    this.spinner.openSpinner();
-    this._userService.login(this.user.email,this.user.password);
-  }
-
-  
-  forgetPass(email)
-  {
-    this.spinner.openSpinner();
-    this._userService.forgetPass(email);
+  login() {
+    this.userService.login(this.user.email, this.user.password).subscribe(
+      (response) => {
+          localStorage.setItem('LoginToken', 'true');
+          this.router.navigateByUrl('/admin/dashboard');
+          this.spinner.closeSpinner();
+        },
+        (error) => {
+          this.alertService.pushError('Invalid Credentials') ;
+          this.spinner.closeSpinner();
+        }
+        );
   }
 
   validateEmail(email) {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    const emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     if (!emailReg.test(email)) {
       this.validForm = false;
-      this.errmessage = "please enter valid email";
-    }
-    else {
-      this.errmessage = "";
-      this.validForm = true;
-    }
-  }
-
-  open(content, address?) {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    if(!emailReg.test(this.fuser.email)){
-      this.validForm = true;
-    }
-
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-
-      this.closeResult = `Closed with: ${result}`;
-
-    }, (reason) => {
-
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-
-    });
-  }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
+      this.errmessage = 'please enter valid email';
     } else {
-      return  `with: ${reason}`;
+      this.errmessage = '';
+      this.validForm = true;
     }
   }
 }

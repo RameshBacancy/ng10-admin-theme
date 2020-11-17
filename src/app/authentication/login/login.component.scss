@@ -1,33 +1,39 @@
+@import 'src/assets/scss/index.scss';
+
+
+
+.fs-14 { font-size:$fontsize-14;}
+.fs-24 { font-size:$fontsize-24;}
+.text-red { color:$primary-red }
+
 .form-control {
   float: left;
   font-size: 1rem;
   margin: 0.4rem 0 0.4rem 0;
-  border-bottom: 0.1rem solid gray;
+  border-bottom: 0.1rem solid $primary-gray;
   border-top: none;
   border-left: none;
   border-right: none;
   }
   
-  .alert-danger{
-   color: red;
-  }
-  .alert{
+.alert{
   position: inherit;
   padding: 0rem 1rem; 
   margin-bottom: 1rem; 
   border: 1px solid transparent;
   border-radius: 0.25rem;
   }
-  img{
+img{
   display: flex;
   height: auto; 
   }
   
-  .col-md-12{
+.col-md-12{
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   }
-  .forgetpass{
+  
+.forgetpass{
   cursor: pointer;
   }
 

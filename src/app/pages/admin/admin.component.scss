@@ -7,10 +7,14 @@
     overflow-x: hidden;
     width: calc(100% - 200px);
     float: right;
-    background-color: #f2f2f2;
+    background-color: $heading-background;
     transition: all 0.5s;
   }
-  .viewOpen  { 
-    width: 100%;
-    
+.viewOpen  { 
+    width: 100%;   
   }
+
+.text-black { color:$color-black}
+
+.fs-30 { font-size:$fontsize-30;}
+.dark-grey-bg {    background-color: $heading-background; }

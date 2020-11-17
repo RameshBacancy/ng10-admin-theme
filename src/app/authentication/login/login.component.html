@@ -1,7 +1,8 @@
 <div class="">
     <div class="container-fluid px-0 ">
         <div class="row mx-0 ">
-            <div class="col-md-12 col-lg-8 col-xl-9 px-0"><img src="assets/images/login-bg.jpg" alt=""
+            <div class="col-md-12 col-lg-8 col-xl-9 px-0">
+                <img src="assets/images/login-bg.jpg" alt=""
                     class="img-fluid custom-min-vh-100 " /> </div>
             <div
                 class="col-md-12 col-lg-4 col-xl-3 px-5 d-flex align-content-center align-items-center h-100  custom-min-vh-100">
@@ -36,58 +37,15 @@
                                          (click)="login()">Login</button>
                                 </div>
                             </div>
-                            <div class="col-md-12 mb-4 d-flex fs-14" *ngIf="message !== ''">
+                            <!-- <div class="col-md-12 mb-4 d-flex fs-14" *ngIf="message !== ''">
                                 <div class="form-group">
                                     <p class=" text alert text-red font-weight-bold">{{message}}</p>
                                 </div>
-                            </div>
-                            <!-- <div class="col-md-12">
-                                <p class=" texd text-dark font-weight-bold forgetpass" (click)="open(mymodal)">Forgot
-                                    password</p>
                             </div> -->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-        <!-- forgot-password model -->
-        <!-- <ng-template #mymodal let-modal>
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Forgot Password</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <form class="" #form="ngForm" (ngSubmit)="forgetPass(fuser.email) ; modal.close('Save click')">
-                <div class="modal-body custom-modal-main">
-                    <section class=" bg-white ">
-                        <div class="row mb-3 mr-4 ml-4 mt-4">
-                            <div class="col-md-12 mb-4">
-                                <p>We will send you an email on this mail to reset your password.</p>
-                            </div>
-                            <div class="col-md-12 mb-4">
-                                <div class="form-group d-flex">
-                                    <label class="col col-md-2 pt-3">Email: </label>
-                                     <input type="text" placeholder="Email" name="fuser" class="col-md-10 form-control fs-14"
-                                        id="fuser" #fuser="ngModel" (keyup)="validateEmail(fuser.email)" [(ngModel)]="fuser.email" required />
-                                </div>
-                            </div>
-                            <div class="col-md-12 mb-4 d-flex fs-14" *ngIf="!validForm">
-                                <div class="form-group">
-                                    <p class=" text alert text-red font-weight-bold">{{errmessage}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" [disabled]="!validForm" name="submit"
-                        class="btn btn-primary  px-3 mx-1 py-2  fs-14 mb-2" value="Email">Confirm Email</button>
-                    <button class="btn btn-secondary px-3 py-2 mx-1 w-120 fs-14 mb-2" type="cancel"
-                        (click)="form.reset(); modal.close('Save click')">Back</button>
-                </div>
-                </form>
-        </ng-template> -->
     </div>
 </div>

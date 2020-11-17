@@ -1,10 +1,13 @@
 
 // Color Pallete
+$loader-gray: #f3f3f3;
+$loader-blue: #3498db;
+
 $primary-purple: #873e8d;
 $primary-blue: #192C3F;
 $secondary-blue: #009AE0;
-$tertiary-blue: #87D3ED;
-$primary-green: #A5CC17;
+$primary-gray: #808080;
+$primary-red: #ff0000;
 $border-grey: #736F6E;
 $background-grey: #F5F7FA;
 $color-white: #FFFFFF;
@@ -22,9 +25,14 @@ $color-yellow: #F5A623;
 $background-blue: #5CA1B8;
 $background-light-cyan: #F2FEFE;
 $color-blue: #0000FF;
-$color-black: #003721;
+$color-black: #000000;
 $color-sky-blue: #138fc2;
 
+$sidebar-background: #2b3a41;
+$sidebar-border-bottom:#676767; 
+$sidebar-hover-background: #0a6c96;
+
+$heading-background: #f2f2f2;
 $primary-button-hover: #475665;
 $primary-button-disabled: #D0D8E8;
 $primary-button-pressed: #142332;
@@ -38,23 +46,6 @@ $error: #D0021B;
 $none: none; 
 $block: block;
 $inline-block: inline-block;
-
-// color class
-.text-black { color:#000}
-.dark-text-1 { color:#696969}
-.purple-bg {  background-color: #873e8d;}
-.red-bg{ background-color: red !important; border-color: red !important;}
-.dark-grey-bg {    background-color: #f2f2f2; }
-.sky-blue-bg {    background-color: #1da8d2; }
-.background-purple-custom { background:#883f8e !important; background-color: #883f8e !important;}
-.border-purple{ border-color: #883f8e !important;}
-.color-white-text { color: white !important;}
-.dark-grey-bg-2 { background:#4b4a4d}
-.dark-grey-bg-3 { background:#666666}
-.dark-green-bg { background:#007e59}
-.dropdown-border-dark{ border: 1px solid #000000;}
-.text-dark-grey { color:#726565 }
-.text-red { color:red }
 
 //large 
 $lg-button:329px;
@@ -70,8 +61,8 @@ $fontsize-12: 12px;
 $fontsize-14: 14px;
 $fontsize-16: 16px;
 $fontsize-18: 18px;
-$fontsize-25: 25px;
-$fontsize-36: 36px;
+$fontsize-24: 24px;
+$fontsize-30: 30px;
 
 // Max page content size
 $max-content-size: 1100px;
@@ -93,31 +84,3 @@ $mobile-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 $desktop-up-with: 1100px;
-
-//font-size-class
-.fs-13 { font-size:13px;}
-.fs-14 { font-size:14px;}
-.fs-16 { font-size:16px;}
-.fs-18 { font-size:18px;}
-.fs-20 { font-size:20px;}
-.fs-22 { font-size:22px;}
-.fs-24 { font-size:24px;}
-.fs-26 { font-size:26px;}
-.fs-30 { font-size:30px;}
-.fs-40 { font-size:40px;}
-
-//font weight class
-.fw-100 { font-weight:100;}
-.fw-300 { font-weight:300;}
-.fw-500 { font-weight:500;}
-.fw-700 { font-weight:700;}
-.fw-800 { font-weight:800;}
-
-//hight width class
-.h-40 { height:40px !important}
-.w-50 { width:50px !important;}
-.w-120 { width:120px;}
-.w-140 { width:140px;}
-.w-160 { width:160px;}
-.w-170 { width:170px;}
-.min-height-220 {    min-height: 220px; }

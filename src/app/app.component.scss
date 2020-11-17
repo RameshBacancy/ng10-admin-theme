@@ -1,31 +1,41 @@
+@import 'src/assets/scss/index.scss';
 
+/** Start Loader with full page **/
 .loader {
   position: absolute;
-  border: 8px solid #f3f3f3;
+  border: 16px solid $loader-gray;
   border-radius: 50%;
-  border-top: 8px solid blue;
-  border-right: 8px solid #f8b739;
-  border-left: 8px solid #82c545;
-  border-bottom: 8px solid #c12680;
+  border-top: 16px solid $loader-blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
   left: 50%;
   top: 50%;
   margin-left: -60px;
   margin-top: -60px;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
-  width: 100px;
-  height: 100px;
 }
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -39,40 +49,62 @@
 }
 
 @-webkit-keyframes animatebottom {
-  from { bottom:-100px; opacity:0 } 
-  to { bottom:0px; opacity:1 }
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0px;
+    opacity: 1
+  }
 }
 
-@keyframes animatebottom { 
-  from{ bottom:-100px; opacity:0 } 
-  to{ bottom:0; opacity:1 }
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
 }
 
+/** End Loader with full page **/
 
+/** alert message classes **/
 .alert {
   padding: 15px;
   margin-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
 .alert h4 {
   margin-top: 0;
   color: inherit;
 }
+
 .alert .alert-link {
   font-weight: bold;
 }
-.alert > p,
-.alert > ul {
+
+.alert>p,
+.alert>ul {
   margin-bottom: 0;
 }
-.alert > p + p {
+
+.alert>p+p {
   margin-top: 5px;
 }
+
 .alert-dismissable,
 .alert-dismissible {
   padding-right: 35px;
 }
+
 .alert-dismissable .close,
 .alert-dismissible .close {
   position: relative;
@@ -80,89 +112,111 @@
   right: -21px;
   color: inherit;
 }
+
 .alert-success {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
+
 .alert-success hr {
   border-top-color: #c9e2b3;
 }
+
 .alert-success .alert-link {
   color: #2b542c;
 }
+
 .alert-info {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
+
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
+
 .alert-info .alert-link {
   color: #245269;
 }
+
 .alert-warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
+
 .alert-warning hr {
   border-top-color: #f7e1b5;
 }
+
 .alert-warning .alert-link {
   color: #66512c;
 }
+
 .alert-danger {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
+
 .alert-danger hr {
   border-top-color: #e4b9c0;
 }
+
 .alert-danger .alert-link {
   color: #843534;
 }
-.alert-dismissable .close, .alert-dismissible .close {
-    position: relative;
-    top: -2px;
-    right: -21px;
-    color: inherit;
-}
-a.close {
-    text-decoration: none !important;
-    font-size: 18px !important;
-    line-height: 1.2;
-}
-.alert-dismissable .close, .alert-dismissible .close {
-    position: relative;
-    top: -2px;
-    right: -21px;
-    color: inherit;
-}
-a.close {
-    text-decoration: none !important;
-    font-size: 18px !important;
-    line-height: 1.2;
-}
-.close {
-    float: right;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    filter: alpha(opacity=20);
-    opacity: .2;
-}
-.alert-block {  
 
-    position: fixed;
-    right: 0;
-    width: 490px;
-    z-index: 99;
-    margin: auto;
-    top: 100px;
-    left: 0;
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
 }
+
+a.close {
+  text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 1.2;
+}
+
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+
+a.close {
+  text-decoration: none !important;
+  font-size: 18px !important;
+  line-height: 1.2;
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+.alert-block {
+
+  position: fixed;
+  right: 0;
+  width: 490px;
+  z-index: 99;
+  margin: auto;
+  top: 100px;
+  left: 0;
+}
+/** end alert message classes **/
+

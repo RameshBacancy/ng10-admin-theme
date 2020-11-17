@@ -12,7 +12,7 @@ import { title } from 'process';
 export class AdminComponent implements OnInit {
 
   menus: any;
-  viewSideBar: boolean = false;
+  viewSideBar = false;
   currentUrl: any = this.router.url;
   url: any = this.currentUrl.split('/');
   public title: any = this.url[this.url.length - 1];
@@ -22,14 +22,8 @@ export class AdminComponent implements OnInit {
       this.currentUrl = this.router.url;
       this.url = this.currentUrl.split('/');
       this.title = this.url[this.url.length - 1];
-      if (this.title === 'cms') {
-        this.title = 'CMS'
-      }
-      else if (this.title === 'dashboard') {
-        this.title = 'Admin Panel'
-      }
-      else if (this.title === 'request') {
-        this.title = 'Registration Requests'
+      if (this.title === 'dashboard') {
+        this.title = 'Admin Panel';
       }
       ref.detectChanges();
     });
@@ -39,7 +33,6 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 
   onViewSidebar(val) {
     this.viewSideBar = val;
